@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/manage/products/index",
+    "pages/manage/order/index",
+    "pages/manage/member/index",
+    "pages/manage/sweep/index",
+    "pages/manage/deliveryRecord/index",
+    "pages/manage/settlement/index",
+    "pages/manage/account/index",
+    "pages/poster/poster",
+    "pages/manage/order/detail",
+    "pages/manage/account/passwordchange",
+    "pages/manage/settlement/withDraw",
+    "pages/grant/grant"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "社区团购",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

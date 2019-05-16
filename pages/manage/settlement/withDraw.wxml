@@ -1,0 +1,53 @@
+<!--pages/me/withDraw/withDraw.wxml-->
+<view>
+  <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{tips}}</view>
+  <view class='header'>
+    <view class='header-title'><text>账户余额(元)</text></view>
+    <view class='balance'><text>{{withDrawInfo.balance}}</text></view>
+  </view>
+  <view class='container'>
+    <view class="input-group">
+      <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+              <view class="weui-label">提现方式</view>
+          </view>
+          <view class="weui-cell__bd">
+              <picker bindchange="withDrawWayChangeHandle" value="{{wayIndex}}" range="{{ways}}">
+                  <view class="weui-select">{{ways[wayIndex]}}</view>
+              </picker>
+          </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">提现金额</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入提现金额" bindinput='withDrawAmountHandle'/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">手机号</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" readonly='readonly'  disabled='true' value='{{withDrawInfo.mobile}}' />
+        </view>
+        <view class="weui-cell__ft">
+            <view class="weui-vcode-btn" bindtap='getOathcode'>{{authBtnText}}</view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">验证码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入验证码" bindinput='authCodeHandle'/>
+            </view>
+      </view>
+    </view>
+
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" disabled='{{isDisabled}}' bindtap="showTopTips" bindtap='confirmWithDraw' loading='{{withDrawLoading}}' >确定</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view>
+  <view class='summary-data-change'>
+    <view class='left-btn' bindtap='lastDate'>
+      <image src='../../assets/images/leftBtn.png'></image>
+    </view>
+    <view>
+      <view class='income' bindtap='goToAnalysis'>
+        <view class='income-title'>
+          <text wx:if="{{dateItem.yesterday}}">昨天</text>
+          <text wx:elif="{{dateItem.today}}">今日</text>
+          <text wx:elif="{{dateItem.week}}">本周</text>
+          <text wx:else>本月</text>
+          <text>收入（元）</text>
+        </view>
+        <view>
+          <text class='income-money-icon'>￥</text>
+          <text class='income-momeny'>{{summaryData.income || 0}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='right-btn' bindtap='nextDate'>
+      <image src='../../assets/images/rightBtn.png'></image>
+    </view>
+  </view>
+
+
+  <view class='summary'>
+
+    <view class='summary-data'>
+      <view class='summary-data-item' data-path='/pages/index/analysis' bindtap='navToUrl'>
+        <view>￥{{summaryData.sales || 0}}</view>
+        <view>营业额</view>
+      </view>
+      <view class='split-line'></view>
+      <view class='summary-data-item' data-path='/pages/index/analysis' bindtap='navToUrl'>
+        <view>{{summaryData.orders || 0}}</view>
+        <view>订单数</view>
+
+      </view>
+      <view class='split-line'></view>
+      <view class='summary-data-item' data-path='/pages/index/analysis' bindtap='navToUrl'>
+        <view>{{summaryData.customers || 0}}</view>
+        <view>用户数</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='func-list'>
+    <view class='funcs'>
+      <view class='func-list-title' wx:for='{{funcList}}' wx:key='title' data-url='{{item.pageUrl}}' bindtap='goToFunc'>
+        <view>
+          <icon class='iconfont {{item.icon}}'></icon>
+        </view>
+        <view>
+          <text style='    color: #595959;'>{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+
+
+</view>

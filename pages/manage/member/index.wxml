@@ -1,0 +1,49 @@
+<!--pages/manage/member/index.wxml-->
+<view class='search'>
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="输入会员昵称或手机号查询" bindconfirm='searchConfirm' value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">输入会员昵称或手机号查询</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+</view>
+
+
+<scroll-view scroll-y='true' bindscrolltolower='scrolltolower' style='height:calc( 100vh - 50px )'>
+
+  <view wx:if='{{list.length}}'>
+    <view class='list' wx:for='{{list}}' wx:key='item.id' data-item='{{item}}' bindtap='detailOrder'>
+
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src="{{item.headImageUrl}}" style="width: 50px; height: 50px; display: block" />
+        </view>
+        <view class="weui-cell__bd">
+          <view>{{item.name}}</view>
+          <view style="font-size: 13px;color: #888888;">付款订单数: {{item.totalOrders}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">
+          <view>最近成交: {{item.lastOrderDate}}</view>
+          <view>消费总金额: ￥{{item.totalOrderAmount}}</view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+  <view class='noData' wx:else>
+ 
+    暂时没有会员
+  </view>
+
+
+</scroll-view>

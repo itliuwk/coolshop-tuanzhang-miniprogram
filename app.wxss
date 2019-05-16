@@ -1,0 +1,84 @@
+/**app.wxss**/
+@import 'assets/styles/weui.wxss';
+@import 'assets/styles/iconfont/iconfont.wxss';
+
+page {
+  /* 主题颜色 */
+  --main-color: #1aad19;
+  /* 文字提示颜色 */
+  --prompt-color: #436be6;
+  --warn-color: rgb(199, 199, 49);
+  /* 文字颜色 */
+  --content-color: #333;
+  /*错误颜色*/
+  --error-color: #e64340;
+  --icon-default: #2c2c2c;
+  --icon-hover: var(--main-color);
+  --background-color: #f8f8f8;
+  --border-color: #f8f8f8;
+  width: 100%;
+  height: 100vh;
+  background: var(--background-color);
+  font-size: 28rpx;
+}
+
+view, text {
+  box-sizing: border-box;
+}
+
+.full-screen {
+  width: 100%;
+  height: 100vh;
+}
+
+.horizontal__vertical__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: var(--main-color);
+  line-height: 100rpx;
+  background: #fff;
+  border-top: 2rpx solid #f6f6f6;
+}
+
+.panel-header-more-btn {
+  float: right;
+  color: var(--main-color);
+}
+
+.preservation {
+  width: 100%;
+  font-weight: bold;
+  position: fixed;
+  left: 0;
+  bottom: 15rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: rgba(2, 149, 2, 1);
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-family: PingFang SC;
+}
+
+.disabledColor {
+  color: #ccc;
+}
+
+.noData{
+  text-align: center;
+  margin-top: 50rpx;
+  color: #999;
+}
+.noData view icon{
+  font-size: 100rpx;
+}

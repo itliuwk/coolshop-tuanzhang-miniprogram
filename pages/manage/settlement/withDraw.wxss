@@ -1,0 +1,20 @@
+/* pages/me/withDraw/withDraw.wxss */
+.header {
+  height:300rpx;
+  padding: 0rpx 20rpx;
+  background: var(--main-color)
+}
+.header-title {
+ font-size: 28rpx;
+ padding: 40rpx 0rpx;
+ color: rgba(255, 255, 255, .8)
+}
+.balance {
+  color: #fff;
+  font-size: 100rpx;
+  font-weight: bold;
+}
+
+.input-group {
+  background: #fff;
+}

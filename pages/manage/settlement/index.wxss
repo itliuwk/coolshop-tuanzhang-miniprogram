@@ -1,0 +1,83 @@
+/* pages/manage/settlement/index.wxss */
+
+.settlement {
+  margin-bottom: 20rpx;
+}
+
+.balanceInfo {
+  display: flex;
+  padding: 30rpx 80rpx;
+  background: var(--main-color) !important;
+}
+
+.balanceInfo>view {
+  flex: 1;
+  color: #fff;
+}
+
+.balance {
+  font-weight: bold;
+  color: #fff;
+}
+
+.cashWithdrawal {
+  text-align: right;
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cashWithdrawal text {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  color: #333;
+  border-radius: 10rpx;
+  background: #f6d814;
+}
+
+.info {
+  display: flex;
+  padding: 50rpx 0;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.info>view {
+  flex: 1;
+  text-align: center;
+}
+
+.transactionRecord {
+  padding: 10rpx 0 0 40rpx;
+  background: #fff;
+  font-weight: bold;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.list {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.status {
+  display: flex;
+  padding: 10rpx 25rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.status>view {
+  flex: 1;
+}
+
+.status>view:nth-child(2) {
+  text-align: right;
+}
+
+.weui-cell::before {
+  border: none;
+}
+
+.weui-cell__bd view:last-child {
+  color: #999;
+}

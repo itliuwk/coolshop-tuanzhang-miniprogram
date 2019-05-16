@@ -1,0 +1,72 @@
+<!--pages/manage/settlement/index.wxml-->
+<view class='settlement'>
+  <view class='balanceInfo'>
+    <view>
+      <view>账户余额</view>
+      <view class='balance'>{{settlement.balance}}元</view>
+    </view>
+    <view class='cashWithdrawal' bindtap='cashWithdrawal'>
+      <!-- <text>提现</text> -->
+    </view>
+
+  </view>
+
+  <view class='info'>
+    <view>
+      <view>累计收入</view>
+      <view>{{settlement.totalIncome}}元</view>
+    </view>
+    <view>
+      <view>累计支出</view>
+      <view>{{settlement.totalExpense}}元</view>
+    </view>
+    <view>
+      <view>待结算余额</view>
+      <view>{{settlement.settleAmount}}元</view>
+    </view>
+  </view>
+
+  <view class='transactionRecord'>交易记录</view>
+  <i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="" title="全部"></i-tab>
+    <i-tab key="INCOME" title="收入"></i-tab>
+    <i-tab key="EXPENSE" title="支出"></i-tab>
+  </i-tabs>
+</view>
+
+
+<scroll-view scroll-y='true' bindscrolltolower='scrolltolower' scroll-top="{{scrollTop}}" style='height:calc( 100vh - 280px )'>
+
+
+  <view wx:if='{{list.length}}'>
+
+    <view class='list' wx:for="{{list}}" wx:key='item.id'>
+      <view class='status'>
+        <view wx:if='{{item.state=="SUCCEEDED"}}'>交易成功</view>
+        <view wx:else>交易失败</view>
+        <view>￥ {{item.amount}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view>流水号：{{item.id}}</view>
+          <view>订单号：{{item.referenceId}}</view>
+          <view>订单金额：{{item.orderTotal}}</view>
+          <view>{{item.createdDate}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">
+          <view></view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='noData' wx:else>
+    <view>
+      <icon class='iconfont icon-zanwushuju'></icon>
+    </view>
+    暂时没有任何记录
+  </view>
+
+
+</scroll-view>

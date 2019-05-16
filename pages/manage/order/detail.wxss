@@ -1,0 +1,113 @@
+/* pages/manage/order/detail.wxss */
+
+.detail_receiving {
+  padding: 20rpx;
+  background: #fff;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.detail_receiving::after {
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  position: absolute;
+  background: -webkit-repeating-linear-gradient(135deg, #d74315 0, #d74315 20%, transparent 0, transparent 25%, #0091ea 0, #0091ea 45%, transparent 0, transparent 50%);
+  background: repeating-linear-gradient(-45deg, #d74315 0, #d74315 20%, transparent 0, transparent 25%, #0091ea 0, #0091ea 45%, transparent 0, transparent 50%);
+  background-size: 100px;
+}
+
+.detail_receiving icon {
+  font-size: 40rpx;
+  color: #436be6;
+}
+
+.detail_receiving icon:nth-child(1) {
+  font-size: 50rpx;
+}
+
+.detail_receiving text {
+  vertical-align: middle;
+  margin: 5rpx 20rpx;
+}
+
+.flex {
+  display: flex;
+  padding: 15rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.flex>view {
+  flex: 1;
+}
+
+.flex icon {
+  font-size: 35rpx;
+  margin-right: 10rpx;
+}
+
+.flex>view:nth-child(2) {
+  text-align: right;
+  color: #f44336;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Goods {
+  background-color: #fff;
+  padding: 20rpx;
+  display: flex;
+}
+
+.Goods>view:nth-child(1) {
+  margin-right: 30rpx;
+}
+
+.Goods>view:nth-child(1) image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.infoGoods {
+  display: flex;
+  width: 100%;
+}
+
+.infoGoods> view:nth-child(1) {
+  width: 70%;
+}
+
+.infoGoods> view:nth-child(2) {
+  width: 30%;
+  text-align: right;
+}
+
+.infoComStyle {
+  display: flex;
+  padding: 15rpx;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.infoComStyle view {
+  flex: 1;
+}
+
+.infoComStyle view:nth-child(2) {
+  color: #969799;
+  text-align: right;
+}
+
+.confirmDelivery {
+  margin-top: 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  width: 100%;
+  background: #188ae2;
+  color: #fff;
+}

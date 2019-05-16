@@ -1,0 +1,19 @@
+<view class="" hover-class="none" hover-stop-propagation="false">
+
+
+
+  <my-poster bindonShareAppMessage="onShareAppMessage" id="getPoster" bindmyevent="closepost"
+    productimage="{{group.coverImage}}" codeimg="{{group.codeimg}}" price="{{group.tuanPrice}}"
+    tuanNum='{{group.targetCount}}' productname="{{group.name}}" username="{{group.username}}" avater="{{group.avater}}"></my-poster>
+
+      <!-- <my-poster bindonShareAppMessage="onShareAppMessage" id="getPoster" bindmyevent="closepost"
+    avater="http://pic17.nipic.com/20111029/1862038_004857506332_2.jpg" codeimg="http://pic17.nipic.com/20111029/1862038_004857506332_2.jpg" price="10"
+    tuanNum='99' productname="哈哈哈哈"></my-poster> -->
+
+
+  <cover-view class='operation'>
+    <!-- <button wx:if="{{showPost}}" class="weui-btn" open-type='share' hover-class='none' type="primary">分享给好友</button> -->
+    <button wx:if="{{showPost}}" class="weui-btn" bindtap='saveToPhone' type="default">保存到手机</button>
+  </cover-view>
+
+</view>

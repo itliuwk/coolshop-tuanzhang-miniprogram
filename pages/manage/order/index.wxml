@@ -1,0 +1,94 @@
+<!--pages/manage/order/index.wxml-->
+
+<view class='search'>
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="订单号、收货人、手机号查询" bindconfirm='searchConfirm' value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">订单号、收货人、手机号查询</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+
+  <i-tabs current="{{ current }}" bindchange="handleChange" wx:if='{{!scanCode}}'>
+    <i-tab key="" title="全部"></i-tab>
+    <i-tab key="TO_PICKUP" title="待提货"></i-tab>
+    <i-tab key="PICKEDUP" title="已提货"></i-tab>
+    <i-tab key="CANCELLED" title="已完成"></i-tab>
+  </i-tabs>
+</view>
+
+
+<scroll-view scroll-y='true' bindscrolltolower='scrolltolower' scroll-top='{{scrollTop}}' style='height:calc( 100vh - {{calcH}} )'>
+
+  <view class="panel__bd" wx:if='{{list.length}}'>
+
+    <view class='panel_con' wx:for='{{list}}' wx:key='item.id'>
+
+      <view class='flex'>
+        <view>{{item.id}}</view>
+        <view wx:if='{{item.state=="TO_PICKUP"}}'>待提货</view>
+        <view wx:if='{{item.state=="PICKEDUP"}}'>已提货</view>
+        <view wx:if='{{item.state=="CANCELLED"}}'>已完成</view>
+      </view>
+
+      <view class='Goods' wx:for='{{item.items}}' wx:for-item="goodsItem" wx:key='item.id'>
+        <view>
+          <image src='{{goodsItem.productImage}}'></image>
+        </view>
+        <view class='infoGoods'>
+          <view>
+            <view>{{goodsItem.productName}}</view>
+            <!-- <view class='specifications'>A6-D95+166黑色</view> -->
+          </view>
+          <view>
+            <view>￥ {{goodsItem.total}}</view>
+            <view>x {{goodsItem.quantity}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='flex'>
+        <view></view>
+        <view style='color:#333'>
+          共{{item.total}}件 总价：￥{{item.totalQuantity}}
+        </view>
+      </view>
+
+      <view class='flex resetFlex'>
+        <view>
+          <view>
+            {{item.mobile}}
+          </view>
+          <view>
+            {{item.name}}
+          </view>
+        </view>
+        <view style='color:#333'>
+          <text bindtap='orderDetail' data-item='{{item}}'>订单详情</text>
+        </view>
+      </view>
+
+    </view>
+
+
+  </view>
+
+
+  <view class='noData' wx:else>
+    <view>
+      <icon class='iconfont icon-zanwushuju'></icon>
+    </view>
+    暂时没有任何订单
+  </view>
+
+
+</scroll-view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品分享",
+  "usingComponents": {
+    "i-drawer": "../../iView/drawer/index",
+    "i-button": "../../iView/button/index"
+  }
+}

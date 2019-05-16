@@ -1,0 +1,86 @@
+/* pages/manage/deliveryRecord/index.wxss */
+
+.list {
+  margin-bottom: 20rpx;
+}
+
+.flex {
+  display: flex;
+  padding: 15rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.flex>view {
+  flex: 3;
+}
+
+.flex icon {
+  font-size: 40rpx;
+  margin-right: 10rpx;
+  color: #436be6;
+}
+
+.flex>view:nth-child(2) {
+  flex: 1;
+  text-align: right;
+  color: var(--prompt-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* 
+.iconfont {
+  color: var(--prompt-color);
+} */
+
+.Goods {
+  background-color: #fafafa;
+  padding: 20rpx;
+  display: flex;
+}
+
+.Goods>view:nth-child(1) {
+  margin-right: 30rpx;
+}
+
+.Goods>view:nth-child(1) image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.infoGoods {
+  display: flex;
+  width: 100%;
+}
+
+.infoGoods> view:nth-child(1) {
+  width: 70%;
+}
+
+.infoGoods> view:nth-child(2) {
+  width: 30%;
+  text-align: right;
+}
+
+.infoComStyle {
+  display: flex;
+  padding: 15rpx;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.infoComStyle view {
+  flex: 1;
+}
+
+.infoComStyle view:nth-child(2) {
+  color: #969799;
+  text-align: right;
+}
+
+.flex  .icon-direct-salestore {
+  font-size: 45rpx;
+  color: #436be6;
+}

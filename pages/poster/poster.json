@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "加速海报",
+  "usingComponents": {
+    "my-poster": "../../components/poster/index"
+  }
+}

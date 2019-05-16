@@ -1,0 +1,33 @@
+<!--pages/login/login.wxml-->
+<view class='login-box'>
+
+  <view class='login-headr-block'>
+    <image class='login-bg' src=''></image>
+    <!-- <image class='login-bg' src='../../assets/images/loginbg.png'></image> -->
+    <view class='login-logo'>
+      <view class='header-cicle1'>
+        <view class='header-cicle2'>
+          <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+  <view class='login-form'>
+    <view class='item-row'>
+      <icon class='iconfont icon-lock'></icon>
+      <input type='text' value='{{username}}' bindinput='usernameChange' placeholder='请输入用户名' />
+    </view>
+    <view class='item-row'>
+      <icon class='iconfont icon-yaochi'></icon>
+      <input type='password' value='{{password}}' bindinput='passwordChange' placeholder='请输入密码' />
+    </view>
+    <view class='item-row'>
+      <i-button i-class='btn' bind:click="handleClick" type="primary">登录</i-button>
+    </view>
+  </view>
+</view>
+
+<view wx:if='{{isPlease}}' class='please'>{{tip}}</view>

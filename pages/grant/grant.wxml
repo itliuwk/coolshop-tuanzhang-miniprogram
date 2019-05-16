@@ -1,0 +1,10 @@
+<!--pages/grant/grant.wxml-->
+<view class='container'>
+  <view class='message'>
+    请授权获取微信信息，否则部分功能不可用
+  </view>
+  <view>
+    <button open-type="getUserInfo" class="weui-btn button-hover" bindgetuserinfo="userInfoHandler" type='primary'>同意授权</button>
+  </view>
+</view>
+

@@ -1,0 +1,18 @@
+<!--pages/manage/account/index.wxml-->
+<view class='account'>
+
+  <view class='currAccount'>
+    <view>当前用户账号</view>
+    <view>{{username}}</view>
+  </view>
+
+  <view class="weui-cell weui-cell_access changePassword" bindtap='changePassword'>
+    <view class="weui-cell__bd">
+      <view style="display: inline-block; vertical-align: middle">修改密码</view>
+    </view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+
+</view>
+
+<view class='loginOut' bindtap='loginOut'> 退出登录 </view>

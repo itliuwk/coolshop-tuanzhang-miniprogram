@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "结算中心",
+  "usingComponents": {
+    "i-tabs": "../../iView/tabs/index",
+    "i-tab": "../../iView/tab/index"
+  }
+}

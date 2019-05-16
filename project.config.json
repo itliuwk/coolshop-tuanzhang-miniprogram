@@ -1,0 +1,117 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wx5ebe988a3c6a0b12",
+	"projectname": "community-corps",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": -1,
+					"name": "商品分享",
+					"pathName": "pages/manage/products/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "海报",
+					"pathName": "pages/poster/poster",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单管理",
+					"pathName": "pages/manage/order/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/manage/order/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员管理",
+					"pathName": "pages/manage/member/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提货记录",
+					"pathName": "pages/manage/deliveryRecord/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账号设置",
+					"pathName": "pages/manage/account/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "结算中心",
+					"pathName": "pages/manage/settlement/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "授权",
+					"pathName": "pages/grant/grant",
+					"scene": null
+				}
+			]
+		}
+	}
+}

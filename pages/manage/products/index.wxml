@@ -1,0 +1,82 @@
+<!--pages/manage/products/index.wxml-->
+<view class='searchAndScreen'>
+
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索商品" bindconfirm='searchConfirm' value="{{listParams.query}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{listParams.query.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索商品</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+
+  <view class="weui-cell weui-cell_access">
+    <view class="weui-cell__bd">
+      <view style="display: inline-block; vertical-align: middle">共{{count}}个商品</view>
+    </view>
+    <!-- <view class="weui-cell__ft" bindtap='toggleRight'>
+      <text>筛选</text>
+      <icon class='iconfont icon-shaixuan'></icon>
+    </view> -->
+  </view>
+
+</view>
+
+
+<scroll-view scroll-y='true' bindscrolltolower='scrolltolower' style='height:calc( 100vh - 100px )'>
+  <view class="panel__bd">
+
+    <view class='panel_con' wx:for='{{list}}' wx:key='item.id'>
+
+      <view>
+        <image src='{{item.coverImage}}'></image>
+      </view>
+      <view>
+        <view>{{item.name}}</view>
+        <view>销量：{{item.tuanZhangSales}} 分佣比例：{{item.commissionRate}}%</view>
+        <view class='info_price'>
+          <text>￥{{item.price}}</text>
+          <icon class='iconfont icon-fenxiang1' data-item='{{item}}' bindtap='share'></icon>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+
+</scroll-view>
+
+<i-drawer mode="right" visible="{{showRight}}" bind:close="toggleRight">
+  <view class="full-screen">
+    <view class='content'>
+
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">商品分类</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{currcategories}}">
+            <view class="picker">
+              <text>{{currcategories[0][multiIndex[0]]}}</text>
+              <text wx:if='{{currcategories[1][multiIndex[1]]}}'> ，{{currcategories[1][multiIndex[1]]}}</text>
+              <text wx:if='{{currcategories[2][multiIndex[2]]}}'> ，{{currcategories[2][multiIndex[2]]}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+    </view>
+    <view class='opi'>
+      <i-button i-class='btn' type="ghost" bindtap='reset'>重置</i-button>
+      <i-button i-class='btn' type="primary" bindtap='confirm'>确认</i-button>
+    </view>
+  </view>
+</i-drawer>

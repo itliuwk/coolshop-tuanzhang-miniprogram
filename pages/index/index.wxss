@@ -1,0 +1,97 @@
+.summary-data-change {
+  background: var(--main-color);
+  min-height: 300rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40rpx;
+}
+
+.income {
+  color: #fff;
+  text-align: center;
+}
+
+.income-money-icon {
+  padding-right: 10rpx;
+}
+
+.income-title {
+  font-size: 30rpx;
+}
+
+.iconfont {
+  font-size: 70rpx;
+  color: var(--main-color);
+}
+
+.income-momeny {
+  font-size: 60rpx;
+  padding-right: 40rpx;
+}
+
+.summary {
+  width: 100%;
+}
+
+.summary-data {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: var(--main-color);
+  padding: 25rpx;
+  background: #fff;
+  position: relative;
+  top: -70rpx;
+  margin: 0rpx 40rpx;
+  box-shadow: 1rpx 10rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 10rpx;
+}
+
+.summary-data-item {
+  flex: 1;
+}
+
+.left-btn, .right-btn {
+  background: #fff;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-btn image, .right-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.split-line {
+  border-right: 1rpx solid var(--main-color);
+}
+
+.summary-data-item > view:first-child {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.func-list {
+  width: 100%;
+  padding: 0rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.funcs {
+  background: #fff;
+  box-shadow: 1rpx 10rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 10rpx;
+}
+
+.func-list-title {
+  display: inline-block;
+  width: 33%;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
