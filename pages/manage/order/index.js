@@ -12,7 +12,6 @@ Page({
     scanCode: false,
     inputVal: '',
     calcH: '105px',
-    item: {},
     list: [],
     current: '',
     scrollTop: -1,
@@ -23,6 +22,8 @@ Page({
       state: '',
       customerId: ''
     },
+
+    item:{},
 
 
     listEnd: false
@@ -41,7 +42,7 @@ Page({
       }
       this.setData({
         item,
-        scanCode: item.scanCode,
+        scanCode: item.scanCode || '',
         calcH,
         listParams: {
           ...this.data.listParams,
